@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MvcApps01.Models.cargo>
+
+@{
+    ViewBag.Title = "ListaMaestroCargos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListaMaestroCargos</h2>
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.car_cod)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cas_des)
+        </th>
+       
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.car_cod)
+        </td>
+        <td>
+            @*@Html.DisplayFor(modelItem => item.cas_des)*@
+            @Html.ActionLink(item.cas_des, "UsuarioxCargo", new { cargo = item.cas_des})
+        </td>
+ 
+    </tr>
+}
+
+</table>

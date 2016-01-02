@@ -1,0 +1,35 @@
+﻿@model IEnumerable<MvcApps01.Models.area>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+<p>
+    Uso de Store Prodecure , Linq con SQL SERVER 
+</p>
+<p>
+    @Html.ActionLink("Nuevo Registro", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>  Nombre del area 
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.are_des)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.are_cod }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.are_cod }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.are_cod })
+        </td>
+    </tr>
+}
+
+</table>

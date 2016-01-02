@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MvcApps01.Models.ElUsuario>
+
+@{
+    ViewBag.Title = "ListadoUsuariosconDescripcionCargo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>ListadoUsuariosconDescripcionCargo</h2>
+
+ 
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.codigo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cargo)
+        </th>
+    
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cargo)
+        </td>
+ 
+    </tr>
+}
+
+</table>

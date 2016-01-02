@@ -1,0 +1,27 @@
+﻿@model MvcApps01.Models.cargo
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>cargo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cas_des)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cas_des)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.car_cod }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

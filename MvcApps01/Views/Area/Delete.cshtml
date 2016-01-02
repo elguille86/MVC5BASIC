@@ -1,0 +1,30 @@
+﻿@model MvcApps01.Models.area
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Eliminar</h2>
+
+<h3>Realmente Deseas Eliminar esta Area?</h3>
+<div>
+    <h4>area</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt> Nombre del area </dt>
+        <dd>
+            @Html.DisplayFor(model => model.are_des)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Retornas a la Lista", "Index")
+        </div>
+    }
+</div>
